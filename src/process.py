@@ -24,7 +24,7 @@ def euclidean_distance(current, prev):
 
 
 def calc_u(eucledian_dist):
-    layer_height = 0.6
+    layer_height = 0.7
     nozzle_dia = 0.8
     pi = 22/7
     filament_dia = 1.75
@@ -83,7 +83,7 @@ def get_gcode_file_descriptor(file_path):
     global PREV_G0
     flag = ["No Prev G0"]
     lextrude = ["No Extrude"]
-    f_out = open('gcode_u.txt', 'w')
+    f_out = open('gcode_u_0_6and0_7.txt', 'w')
     str_line = ""
     global last_u
     with open(file_path, 'r') as f:
@@ -106,7 +106,7 @@ def get_gcode_file_descriptor(file_path):
             # GCODE.append((line.split()) + flag + lextrude)
 
 
-get_gcode_file_descriptor('gcode.txt')
+get_gcode_file_descriptor('PIPE-0DEGREE-0-4.txt')
 counter = 0
 for i in COORDS:
     print(i, euclidean_distance(i[0], i[1]))
